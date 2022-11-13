@@ -1,0 +1,11 @@
+#cmakedefine RAL_SUPPORT_DIRECTX11 1
+#cmakedefine RAL_SUPPORT_DIRECTX12 1
+
+
+
+
+#ifdef RAL_EXPORTS
+#define RAL_EXTERN
+#else
+#define RAL_EXTERN extern
+#endif

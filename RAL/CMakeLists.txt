@@ -1,73 +1,61 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.10)
 
 
 
-include(${CMAKE_SOURCE_DIR}/CMake/ImplementOptions.cmake)
+include(${RAL_CMAKE_DIR}/APIOptions.cmake)
 
 
 
-configure_file(Source/RAL/BuildInfo.h.in Include/RAL/BuildInfo.h)
+set(RAL_SOURCES_DIR ${CMAKE_SOURCE_DIR}/RAL/Sources PARENT_SCOPE)
+set(RAL_SOURCES_DIR ${CMAKE_SOURCE_DIR}/RAL/Sources)
 
 
 
-file(GLOB FakeSourceFiles
-    "FakeSource/RAL/*.cpp"
+configure_file(ConfigurationFiles/RAL/.BuildInfo ConfigurationFiles/RAL/.BuildInfo)
+
+
+
+file(GLOB RALSourceFiles
+    "Sources/RAL/*.cpp"
+    "Sources/RAL/*.h"
 )
-source_group("FakeSource\\RAL" FILES ${FakeSourceFiles})
+source_group("Sources\\RAL" FILES ${RALSourceFiles})
 
-
-
-file(GLOB SourceFiles
-    "Source/RAL/*.cpp"
-    "Source/RAL/*.h"
+file(GLOB RALSourceDirectX11Files
+    "Sources/RAL/DirectX11/*.cpp"
+    "Sources/RAL/DirectX11/*.h"
 )
-source_group("Source\\RAL" FILES ${SourceFiles})
+source_group("Sources\\RAL\\DirectX11" FILES ${RALSourceDirectX11Files})
 
-file(GLOB SourceUtilsFiles
-    "Source/RAL/Utils/*.cpp"
-    "Source/RAL/Utils/*.h"
+file(GLOB RALSourceDirectX12Files
+    "Sources/RAL/DirectX12/*.cpp"
+    "Sources/RAL/DirectX12/*.h"
 )
-source_group("Source\\RAL\\Utils" FILES ${SourceUtilsFiles})
+source_group("Sources\\RAL\\DirectX11" FILES ${RALSourceDirectX12Files})
 
 
 
-set(RAL_SOURCE_DIR "${CMAKE_CURRENT_LIST_DIR}/Source" PARENT_SCOPE)
-set(RAL_SOURCE_DIR "${CMAKE_CURRENT_LIST_DIR}/Source")
-
-
-
-set(RAL_COMMON_SOURCE_FILES ${SourceFiles} ${SourceUtilsFiles} PARENT_SCOPE)
-set(RAL_COMMON_SOURCE_FILES ${SourceFiles} ${SourceUtilsFiles})
-
-
-
-add_library(RAL SHARED
-    ${SourceFiles}
-    ${SourceUtilsFiles}
-
-    ${FakeSourceFiles}
+add_library(RAL STATIC
+    ${RALSourceFiles}
+    ${RALSourceDirectX11Files}
+    ${RALSourceDirectX12Files}
 )
 
-set_target_properties(RAL
-    PROPERTIES
-        FOLDER "RAL"
+
+
+target_link_libraries(RAL
+    PRIVATE 
+        d3d11.lib
+        d3d12.lib
+        d3dcompiler
 )
 
 target_include_directories(RAL
-    PUBLIC ${CMAKE_BINARY_DIR}/RAL/Include
-    PRIVATE Source
+    PUBLIC 
+        ${CMAKE_BINARY_DIR}/RAL/ConfigurationFiles
+        ${CMAKE_CURRENT_LIST_DIR}/Sources
 )
 
 target_compile_definitions(RAL
-    PRIVATE RAL_EXPORTS=1 "RAL_CONFIG=$<CONFIG>"
-)
-
-
-
-add_subdirectory(Implements)
-
-
-
-add_dependencies(RAL
-    RAL.Implements
+    PRIVATE RAL_EXPORTS=1
 )

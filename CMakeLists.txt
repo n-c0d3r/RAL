@@ -4,12 +4,15 @@ cmake_minimum_required(VERSION 3.10)
 
 project(RAL)
 
-set_property( GLOBAL PROPERTY USE_FOLDERS ON)
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 17)
 
 
+
+set(RAL_CMAKE_DIR ${CMAKE_SOURCE_DIR}/CMake)
+set(RAL_BINARY_DIR ${CMAKE_BINARY_DIR}/RAL/$<CONFIG>)
 
 
 

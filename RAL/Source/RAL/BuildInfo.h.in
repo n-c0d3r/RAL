@@ -1,4 +1,0 @@
-#cmakedefine RAL_USE_DIRECTX11 1
-#cmakedefine RAL_USE_DIRECTX12 1
-
-#cmakedefine RAL_IMPLEMENT_DIR ${RAL_IMPLEMENT_DIR}

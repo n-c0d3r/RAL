@@ -1,29 +1,27 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.10)
 
 
 
-file(GLOB SourceFiles
-    "Source/*.cpp"
-    "Source/*.h"
+file(GLOB InitRALSourceFiles
+    "Sources/*.cpp"
+    "Sources/*.h"
 )
-source_group("Source" FILES ${SourceFiles})
+source_group("Sources" FILES ${InitRALSourceFiles})
 
 
 
-add_executable(Samples.InitRAL
-    ${SourceFiles}
+add_executable(InitRAL
+    ${InitRALSourceFiles}
 )
 
-set_target_properties(Samples.InitRAL
-    PROPERTIES
+
+
+set_target_properties(InitRAL
+    PROPERTIES 
         FOLDER "Samples"
 )
 
-target_include_directories(Samples.InitRAL
-    PRIVATE Source
-)
 
 
-
-include(${CMAKE_SOURCE_DIR}/CMake/RALImportForTarget.cmake)
-RALImportForTarget(Samples.InitRAL)
+include(${RAL_CMAKE_DIR}/TargetUseRAL.cmake)
+TargetUseRAL(InitRAL)

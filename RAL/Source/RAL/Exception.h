@@ -7,47 +7,41 @@
 
 #include <RAL/AbstractObject.h>
 #include <RAL/Singleton.h>
+#include <RAL/Log.h>
 
 
 
 namespace RAL {
 
-	struct S_ErrorException : public std::exception {
+    struct I_Exception {
 
-    private:
-        std::string m_Content;
+        RAL::E_LogLevel logLevel;
+        std::string content;
+
+    };
 
 
-    public:
-        S_ErrorException(const std::string& content) : m_Content("2" + content) {
+
+	struct S_ErrorException : public I_Exception {
+
+        S_ErrorException(const std::string& content) {
         
-
+            this->content = content;
+            logLevel = E_LogLevel::ERROR_;
         
-        }
-
-        const char * what () const throw () {
-            return m_Content.c_str();
         }
 
     };
 
 
 
-	struct S_FatalException : public std::exception {
+    struct S_FatalException : public I_Exception {
 
-    private:
-        std::string m_Content;
+        S_FatalException(const std::string& content) {
 
+            this->content = content;
+            logLevel = E_LogLevel::FATAL;
 
-    public:
-        S_FatalException(const std::string& content) : m_Content("3" + content) {
-        
-        
-        
-        }
-
-        const char * what () const throw () {
-            return m_Content.c_str();
         }
 
     };

@@ -2,17 +2,6 @@
 
 #include <RAL/.BuildInfo>
 #include <RAL/Utils.h>
-
-
-
-namespace RAL {
-
-
-
-}
-
-
-
 #include <RAL/AbstractObject.h>
 #include <RAL/AbstractEnum.h>
 #include <RAL/Singleton.h>
@@ -23,3 +12,11 @@ namespace RAL {
 #include <RAL/Usage.h>
 #include <RAL/UsageManager.h>
 #include <RAL/API.h>
+
+
+
+namespace RAL {
+
+
+
+}

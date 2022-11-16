@@ -1,4 +1,6 @@
 #include "Log.h"
+#include <RAL/Exception.h>
+#include <RAL/Utils.h>
 
 
 
@@ -61,27 +63,21 @@ namespace RAL {
 
         }
 
-        void Exception(const std::exception& e) {
+        void Exception(const I_Exception& e) {
 
-            std::string content = e.what();
-
-            Level level = (Level)(content[0] % 4);
-
-            content = content.substr(1, content.length() - 1);
-
-            switch (level)
+            switch (e.logLevel)
             {
-            case RAL::HN_Log::Level::INFO:
-                Info(content);
+            case RAL::E_LogLevel::INFO:
+                Info(e.content);
                 break;
-            case RAL::HN_Log::Level::WARN:
-                Warn(content);
+            case RAL::E_LogLevel::WARN:
+                Warn(e.content);
                 break;
-            case RAL::HN_Log::Level::ERROR_:
-                Error(content);
+            case RAL::E_LogLevel::ERROR_:
+                Error(e.content);
                 break;
-            case RAL::HN_Log::Level::FATAL:
-                Fatal(content);
+            case RAL::E_LogLevel::FATAL:
+                Fatal(e.content);
                 break;
             default:
                 break;

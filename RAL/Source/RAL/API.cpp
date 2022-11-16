@@ -17,13 +17,17 @@ namespace RAL {
 
 			try {
 
-				return new DirectX11::C_API();
+				HN_Log::Info("<RAL> Choose DirectX 11 API to use");
 
+				return new DirectX11::C_API();
 			}
-			catch (std::exception& e) {
+			catch (I_Exception& e) {
 
 				HN_Log::Exception(e);
 
+				HN_Log::Error("<RAL> Initializing DirectX11 API failed");
+
+				return 0;
 			}
 
 		}

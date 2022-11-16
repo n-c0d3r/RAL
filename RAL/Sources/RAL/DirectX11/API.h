@@ -15,14 +15,14 @@ namespace RAL {
             public I_API
         {
 
+        private:
+
+
+
+
         public:
             C_API();
             virtual void Release() override;
-
-            virtual std::string GetName() override;
-
-        private:
-            void SetupFormats();
 
         };
 

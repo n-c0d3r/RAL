@@ -1,4 +1,6 @@
 #include "API.h"
+#include <RAL/FormatManager.h>
+#include <RAL/UsageManager.h>
 
 #ifdef RAL_SUPPORT_DIRECTX11
 #include "DirectX11/API.h"
@@ -22,6 +24,13 @@ namespace RAL {
 	void I_API::Release() {
 
 
+
+	}
+
+	void I_API::InternalInit() {
+
+		m_FormatManager->SetupValues();
+		m_UsageManager->SetupValues();
 
 	}
 

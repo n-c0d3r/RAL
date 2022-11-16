@@ -25,14 +25,14 @@ namespace RAL {
 
 
 
-			std::cout << "<RAL> Start setting up DirectX11 Usages" << std::endl;
+			HN_Log::Info("<RAL> Start setting up DirectX11 Usages");
 
 			Usage.DEFAULT = 0;
 			Usage.IMMUTABLE = 1;
 			Usage.DYNAMIC = 2;
 			Usage.STAGING = 3;
 
-			std::cout << "<RAL> Setting up DirectX11 Usages done" << std::endl;
+			HN_Log::Info("<RAL> Setting up DirectX11 Usages done");
 
 		}
 

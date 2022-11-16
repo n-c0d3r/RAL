@@ -19,6 +19,8 @@ namespace RAL {
 		}
 #endif
 
+		HN_Log::Error("<RAL> No Graphics API is supported");
+
 		return 0;
 	}
 	void I_API::Release() {

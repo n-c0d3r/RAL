@@ -19,23 +19,23 @@ namespace RAL {
 			)
 		{
 
-			std::cout << "<RAL> Start initializing DirectX11 API" << std::endl;
+			HN_Log::Info("<RAL> Start initializing DirectX11 API");
 
 			InternalInit();
 
-			std::cout << "<RAL> DirectX11 API initialized" << std::endl;
+			HN_Log::Info("<RAL> DirectX11 API initialized");
 
 		}
 
 		void C_API::Release() {
 
-			std::cout << "<RAL> Start Releasing DirectX11 API" << std::endl;
+			HN_Log::Info("<RAL> Start Releasing DirectX11 API");
 
 			I_API::Release();
 
 			I_AbstractObject::Release();
 
-			std::cout << "<RAL> DirectX11 API Released" << std::endl;
+			HN_Log::Info("<RAL> DirectX11 API Released");
 
 		}
 

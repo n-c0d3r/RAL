@@ -14,3 +14,4 @@
 #endif
 
 #include "Types.h"
+#include "Log.h"

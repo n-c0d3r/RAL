@@ -25,7 +25,7 @@ namespace RAL {
 
 
 
-			std::cout << "<RAL> Start setting up DirectX11 Formats" << std::endl;
+			HN_Log::Info("<RAL> Start setting up DirectX11 Formats");
 
 			Format.UNKNOWN = 0;
 			Format.R32G32B32A32_TYPELESS = 1;
@@ -150,7 +150,7 @@ namespace RAL {
 			Format.SAMPLER_FEEDBACK_MIP_REGION_USED_OPAQUE;
 			Format.FORCE_UINT = 0xffffffff;
 
-			std::cout << "<RAL> Setting up DirectX11 Format done" << std::endl;
+			HN_Log::Info("<RAL> Setting up DirectX11 Format done");
 
 		}
 

@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <set>
 #include <unordered_set>
+#include <exception>
 
 #ifdef _WIN32
 #include <Windows.h>
@@ -15,3 +16,4 @@
 
 #include "Types.h"
 #include "Log.h"
+#include "Exception.h"

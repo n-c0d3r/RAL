@@ -10,5 +10,18 @@ int main() {
 
 	RAL::I_API::Create("DirectX11");
 
+	try
+	{
+
+		throw RAL::S_ErrorException("Error");
+
+	}
+	catch (const std::exception& e)
+	{
+
+		RAL::HN_Log::Exception(e);
+
+	}
+
 	return 0;
 }

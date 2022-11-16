@@ -15,7 +15,17 @@ namespace RAL {
 #ifdef RAL_SUPPORT_DIRECTX11
 		if (APIName == "DirectX11") {
 
-			return new DirectX11::C_API();
+			try {
+
+				return new DirectX11::C_API();
+
+			}
+			catch (std::exception& e) {
+
+				HN_Log::Exception(e);
+
+			}
+
 		}
 #endif
 
@@ -32,6 +42,7 @@ namespace RAL {
 	void I_API::InternalInit() {
 
 		m_FormatManager->SetupValues();
+
 		m_UsageManager->SetupValues();
 
 	}

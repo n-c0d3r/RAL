@@ -3,10 +3,10 @@ cmake_minimum_required(VERSION 3.10)
 
 
 file(GLOB InitRALSourceFiles
-    "Sources/*.cpp"
-    "Sources/*.h"
+    "Source/*.cpp"
+    "Source/*.h"
 )
-source_group("Sources" FILES ${InitRALSourceFiles})
+source_group("Source" FILES ${InitRALSourceFiles})
 
 
 

@@ -12,7 +12,7 @@ function(TargetUseRAL TargetName)
     )
 
     target_include_directories(${TargetName} 
-        PUBLIC ${RAL_SOURCES_DIR}
+        PUBLIC ${RAL_SOURCE_DIR}
     )
 
 endfunction(TargetUseRAL)

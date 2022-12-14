@@ -12,6 +12,7 @@
 #include <RAL/Usage.h>
 #include <RAL/UsageManager.h>
 #include <RAL/API.h>
+#include <RAL/Screen.h>
 
 
 

@@ -10,13 +10,13 @@ source_group("Source" FILES ${InitRALSourceFiles})
 
 
 
-add_executable(InitRAL
+add_executable(Samples.InitRAL
     ${InitRALSourceFiles}
 )
 
 
 
-set_target_properties(InitRAL
+set_target_properties(Samples.InitRAL
     PROPERTIES 
         FOLDER "Samples"
 )
@@ -24,4 +24,4 @@ set_target_properties(InitRAL
 
 
 include(${RAL_CMAKE_DIR}/TargetUseRAL.cmake)
-TargetUseRAL(InitRAL)
+TargetUseRAL(Samples.InitRAL)

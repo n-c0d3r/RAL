@@ -33,12 +33,27 @@ file(GLOB RALSourceDirectX12Files
 )
 source_group("Source\\RAL\\DirectX11" FILES ${RALSourceDirectX12Files})
 
+file(GLOB RALSourceOSFiles
+    "Source/RAL/OS/*.cpp"
+    "Source/RAL/OS/*.h"
+)
+source_group("Source\\RAL\\OS" FILES ${RALSourceOSFiles})
+
+file(GLOB RALSourceOSWindowsFiles
+    "Source/RAL/OS/Windows/*.cpp"
+    "Source/RAL/OS/Windows/*.h"
+)
+source_group("Source\\RAL\\OS\\Windows" FILES ${RALSourceOSWindowsFiles})
+
 
 
 add_library(RAL STATIC
     ${RALSourceFiles}
     ${RALSourceDirectX11Files}
     ${RALSourceDirectX12Files}
+
+    ${RALSourceOSFiles}
+    ${RALSourceOSWindowsFiles}
 )
 
 
@@ -48,14 +63,20 @@ target_link_libraries(RAL
         d3d11.lib
         d3d12.lib
         d3dcompiler
+
+    PUBLIC 
+    WAL
 )
 
 target_include_directories(RAL
     PUBLIC 
-        ${CMAKE_BINARY_DIR}/RAL/ConfigurationFiles
+        ${CMAKE_CURRENT_BINARY_DIR}/ConfigurationFiles
         ${CMAKE_CURRENT_LIST_DIR}/Source
+        ${CMAKE_CURRENT_LIST_DIR}/../WAL/WAL/Source
 )
 
 target_compile_definitions(RAL
     PRIVATE RAL_EXPORTS=1
 )
+
+add_dependencies(RAL WAL)

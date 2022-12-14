@@ -1,3 +1,4 @@
 ## RAL
-- Stands for Rendering Abstraction Layer
-- Target: for learning
+- Stands for Rendering Abstraction Layer.
+- Learning aimed.
+- No commercial use.

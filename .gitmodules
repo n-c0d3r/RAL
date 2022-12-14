@@ -1,0 +1,7 @@
+[submodule "WAL"]
+	path = WAL
+	url = https://github.com/n-c0d3r/WAL
+	
+[submodule "Documentations/Conventions/NCPPNamingConvention"]
+	path = Documentations/Conventions/NCPPNamingConvention
+	url = https://github.com/n-c0d3r/NCPPNamingConvention

@@ -15,8 +15,6 @@ namespace RAL {
 
 			I_UsageManager::Release();
 
-			I_AbstractObject::Release();
-
 		}
 
 		void C_UsageManager::SetupValues() {

@@ -17,15 +17,15 @@ namespace RAL {
 
 			try {
 
-				HN_Log::Info("<RAL> Choose DirectX 11 API to use");
+				UL::HN_Log::Info("<RAL> Choose DirectX 11 API to use");
 
 				return new DirectX11::C_API();
 			}
-			catch (I_Exception& e) {
+			catch (UL::I_Exception& e) {
 
-				HN_Log::Exception(e);
+				UL::HN_Log::Exception(e);
 
-				HN_Log::Error("<RAL> Initializing DirectX11 API failed");
+				UL::HN_Log::Error("<RAL> Initializing DirectX11 API failed");
 
 				return 0;
 			}
@@ -33,13 +33,13 @@ namespace RAL {
 		}
 #endif
 
-		HN_Log::Error("<RAL> No Graphics API is supported");
+		UL::HN_Log::Error("<RAL> No Graphics API is supported");
 
 		return 0;
 	}
 	void I_API::Release() {
 
-		I_AbstractObject::Release();
+
 
 	}
 

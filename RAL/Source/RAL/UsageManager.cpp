@@ -11,7 +11,7 @@ namespace RAL {
 	}
 	void I_UsageManager::Release() {
 
-		I_AbstractObject::Release();
+
 
 	}
 

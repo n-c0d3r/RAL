@@ -3,20 +3,17 @@
 #include <RAL/.BuildInfo>
 #include <RAL/Utils.h>
 
-#include <RAL/Singleton.h>
-#include <RAL/Flag.h>
-
 
 
 namespace RAL {
 
-	RAL_BEGIN_FLAGS(Usage)
+	UL_BEGIN_FLAGS(Usage)
 
-		RAL_FLAG32(DEFAULT);
-		RAL_FLAG32(IMMUTABLE);
-		RAL_FLAG32(DYNAMIC);
-		RAL_FLAG32(STAGING);
+		UL_FLAG32(DEFAULT);
+		UL_FLAG32(IMMUTABLE);
+		UL_FLAG32(DYNAMIC);
+		UL_FLAG32(STAGING);
 
-	RAL_END_FLAGS(Usage)
+	UL_END_FLAGS(Usage)
 
 }

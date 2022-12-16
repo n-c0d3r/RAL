@@ -6,8 +6,8 @@ include(${RAL_CMAKE_DIR}/APIOptions.cmake)
 
 
 
-set(RAL_SOURCE_DIR ${CMAKE_SOURCE_DIR}/RAL/Source PARENT_SCOPE)
-set(RAL_SOURCE_DIR ${CMAKE_SOURCE_DIR}/RAL/Source)
+set(RAL_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Source PARENT_SCOPE)
+set(RAL_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Source)
 
 
 
@@ -65,18 +65,20 @@ target_link_libraries(RAL
         d3dcompiler
 
     PUBLIC 
-    WAL
+        WAL
+        UL
 )
 
 target_include_directories(RAL
     PUBLIC 
         ${CMAKE_CURRENT_BINARY_DIR}/ConfigurationFiles
-        ${CMAKE_CURRENT_LIST_DIR}/Source
-        ${CMAKE_CURRENT_LIST_DIR}/../WAL/WAL/Source
+        ${CMAKE_CURRENT_SOURCE_DIR}/Source
+        ${CMAKE_SOURCE_DIR}/WAL/WAL/Source
+        ${CMAKE_SOURCE_DIR}/UL/UL/Source
 )
 
 target_compile_definitions(RAL
     PRIVATE RAL_EXPORTS=1
 )
 
-add_dependencies(RAL WAL)
+add_dependencies(RAL WAL UL)

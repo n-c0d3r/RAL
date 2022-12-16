@@ -4,6 +4,6 @@
 
 namespace RAL {
 
-	RAL_DEFINE_FLAGS(Format);
+	UL_DEFINE_FLAGS(Format);
 
 }

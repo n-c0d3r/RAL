@@ -14,6 +14,7 @@ namespace RAL {
 		void C_UsageManager::Release() {
 
 			I_UsageManager::Release();
+			UL::I_AbstractObject::Release();
 
 		}
 
@@ -23,14 +24,14 @@ namespace RAL {
 
 
 
-			HN_Log::Info("<RAL> Start setting up DirectX11 Usages");
+			UL::HN_Log::Info("<RAL> Start setting up DirectX11 Usages");
 
 			Usage.DEFAULT = 0;
 			Usage.IMMUTABLE = 1;
 			Usage.DYNAMIC = 2;
 			Usage.STAGING = 3;
 
-			HN_Log::Info("<RAL> Setting up DirectX11 Usages done");
+			UL::HN_Log::Info("<RAL> Setting up DirectX11 Usages done");
 
 		}
 

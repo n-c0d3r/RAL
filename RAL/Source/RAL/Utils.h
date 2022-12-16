@@ -14,6 +14,4 @@
 #include <Windows.h>
 #endif
 
-#include "Types.h"
-#include "Log.h"
-#include "Exception.h"
+#include <UL\UL.h>

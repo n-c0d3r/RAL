@@ -11,9 +11,7 @@ namespace RAL {
 
 	class I_FormatManager :
 		public UL::I_FlagManager,
-		public UL::TC_Singleton<I_FormatManager>,
-
-		public UL::I_AbstractObject
+		public UL::TC_Singleton<I_FormatManager>
 	{
 
 	protected:

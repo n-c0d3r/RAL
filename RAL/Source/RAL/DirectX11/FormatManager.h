@@ -12,9 +12,7 @@ namespace RAL {
 	namespace DirectX11 {
 
 		class C_FormatManager :
-			public I_FormatManager,
-
-			public UL::I_AbstractObject
+			public I_FormatManager
 		{
 
 		public:

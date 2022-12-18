@@ -12,9 +12,7 @@ namespace RAL {
 	namespace DirectX11 {
 
 		class C_UsageManager :
-			public I_UsageManager,
-
-			public UL::I_AbstractObject
+			public I_UsageManager
 		{
 
 		public:

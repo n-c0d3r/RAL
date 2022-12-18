@@ -33,8 +33,6 @@ namespace RAL {
 
 			I_API::Release();
 
-			I_AbstractObject::Release();
-
 			UL::HN_Log::Info("<RAL> DirectX11 API Released");
 
 		}

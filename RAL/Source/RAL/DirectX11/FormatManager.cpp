@@ -14,7 +14,6 @@ namespace RAL {
 		void C_FormatManager::Release() {
 
 			I_FormatManager::Release();
-			UL::I_AbstractObject::Release();
 
 		}
 

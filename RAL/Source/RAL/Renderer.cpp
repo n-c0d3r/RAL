@@ -12,7 +12,7 @@ namespace RAL {
 
 	void I_Renderer::Release() {
 
-
+		UL::I_AbstractObject::Release();
 
 	}
 

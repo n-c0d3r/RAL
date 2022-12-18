@@ -39,7 +39,7 @@ namespace RAL {
 	}
 	void I_API::Release() {
 
-
+		UL::I_AbstractObject::Release();
 
 	}
 

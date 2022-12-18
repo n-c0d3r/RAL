@@ -16,7 +16,7 @@ namespace RAL {
 	}
 	void I_Screen::Release() {
 
-
+		UL::I_AbstractObject::Release();
 
 	}
 
